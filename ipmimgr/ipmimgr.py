@@ -28,7 +28,7 @@ class Power(cli.Application):
     def set_power(self, cmd):
         self._action = cmd
 
-    @cli.switch("-i", str, help="IPMI IP,example: 111(only 10.10.90.111)/10.10.xxx.xxx")
+    @cli.switch("-i", str, mandatory=True, help="IPMI IP,example: 111(only 10.10.90.111)/10.10.xxx.xxx")
     def get_ip(self, ip):
         if ip.isdigit():
             bmc = "10.10.90.{}".format(int(ip))
@@ -45,9 +45,6 @@ class Power(cli.Application):
         self._user = user
 
     def main(self):
-        if not self._bmc:
-            print_error("[ ERROR ] failed: ipmi_ip needed!")
-            return
         print_normal("[ IPMIINFO ] ipmiip: {}, ipmiuser: {}, ipmipwd: {}".format(self._bmc, self._user, self._pwd))
         try:
             ipmicmd = ipmi_command.Command(bmc=self._bmc, userid=self._user, password=self._pwd)

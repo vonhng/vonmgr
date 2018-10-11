@@ -20,7 +20,7 @@ class Transfer(cli.Application):
 
     _user, _pwd, _ips = ("root", "cljslrl0620", "")  # 这里修改默认用户和密码
 
-    @cli.switch(["-i", "-ip"], str, help="remote ips,use '/' to split")
+    @cli.switch(["-i", "-ip"], str, mandatory=True, help="remote ips,use '/' to split")
     def ips(self, ips):
         self._ips = ips
 

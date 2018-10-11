@@ -23,7 +23,7 @@ class Command(cli.Application):
     _ips, _cmd = ("", "")
     no_log = cli.Flag("--no-log", help="if given, print detail")
 
-    @cli.switch(["-i", "--ip"], str, help="remote ips,use '/' to split")
+    @cli.switch(["-i", "--ip"], str, mandatory=True, help="remote ips,use '/' to split")
     def ips(self, ips):
         self._ips = ips
 
