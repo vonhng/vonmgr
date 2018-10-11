@@ -1,0 +1,16 @@
+# Python
+*.egg-info
+*.egg
+*.pyc
+.cache
+build
+dist
+.venv/
+.pytest_cache/
+
+# Translations
+*.mo
+.idea
+.DS_Store
+tests/test.py
+web_service/qflame

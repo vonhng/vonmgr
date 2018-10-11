@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+current_path=`pwd`
+path="/Users/vonhng/myproject/vonmgr"
+cmd="python main.py"
+#/Users/vonhng/.pyenv/bin/pyenv activate env2 > /dev/null
+cd $path
+
+var=" "
+for i
+do
+    var+=" $i"
+done
+
+$cmd $var
+cd "$current_path"
