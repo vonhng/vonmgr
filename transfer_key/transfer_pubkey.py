@@ -10,7 +10,7 @@
 import os
 from plumbum import cli, colors
 
-from util.util import SSH, print_error, print_ok
+from util.util import SSH, print_error, print_ok, run_cmd
 
 
 class Transfer(cli.Application):
@@ -34,7 +34,8 @@ class Transfer(cli.Application):
 
     def main(self):
         try:
-            pubkey = os.environ["PUBKEY_PATH"]
+            pubkey_path = os.environ["PUBKEY_PATH"]
+            pubkey = run_cmd(["cat", pubkey_path])
         except KeyError as e:
             print_error("[ ERROR ] Please export {}".format(e))
             return

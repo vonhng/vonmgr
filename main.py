@@ -37,7 +37,7 @@ class Ipmi(Power):
     pass
 
 
-@VonMgr.subcommand("trans_key")
+@VonMgr.subcommand("add")
 class TransferKey(Transfer):
     """transfer key.pub into remote authorized_keys"""
     pass
