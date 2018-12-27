@@ -20,7 +20,7 @@ Subcommands:
     cmd                execute cmd in remote node; see 'vonmgr cmd --help' for more info
     count_code         count code rows in path; see 'vonmgr count_code --help' for more info
     power              check/change power status; see 'vonmgr power --help' for more info
-    trans_key          transfer key.pub into remote authorized_keys; see 'vonmgr trans_key --help' for more info
+    add                transfer key.pub into remote authorized_keys; see 'vonmgr trans_key --help' for more info
 ```
 目前已经集成了四个工具：
 - cmd： 交互式在集群的1~all个节点执行命令
@@ -49,7 +49,7 @@ Switches:
     -s CMD:{'reset', 'on', 'off'}      set power on|off|reset; requires -i; excludes -g
     -u USER:str                        IPMI USER,default: ADMIN; requires -i, -p
 ```
-- trans_key：上传key，详细用法在[传key工具用法](https://github.com/vonhng/transfer_pubkey/blob/master/README.md)
+- add：上传key，详细用法在[传key工具用法](https://github.com/vonhng/transfer_pubkey/blob/master/README.md)
 
 ```Switches:
     -i, --ip IPS:str            remote ips,use '/' to split
@@ -58,8 +58,9 @@ Switches:
 ```
 ### 3、使用
 - clone repo
-- update bin/vonmgr
-- mv vonmgr into /usr/local/bin
+- pip install -r requirements.txt
+- 更新 `bin/vonmgr`脚本里的path
+- cp vonmgr /usr/local/bin
 
 ### 4、TODO
 - 增加新工具
