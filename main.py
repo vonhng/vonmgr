@@ -3,15 +3,12 @@
 """
 @version: 2.7.10
 @author: vonhng
-@contact: qianyong.feng@woqutech.com
+@contact: vonhehe@gmail.com
 @file: main.py
 @time: 2018/10/11 10:06
 """
 
 from plumbum import cli
-from plumbum.cli.application import T_
-
-from count_code.count_code import CountCode
 from ipmimgr.ipmimgr import Power
 from remote_execute.command import Command
 from transfer_key.transfer_pubkey import Transfer
@@ -46,12 +43,6 @@ class TransferKey(Transfer):
 @VonMgr.subcommand("cmd")
 class Cmd(Command):
     """execute cmd in remote node"""
-    pass
-
-
-@VonMgr.subcommand("count_code")
-class CountCodes(CountCode):
-    """count code rows in path"""
     pass
 
 

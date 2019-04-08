@@ -3,7 +3,7 @@
 """
 @version: 2.7.10
 @author: vonhng
-@contact: qianyong.feng@woqutech.com
+@contact: vonhehe@gmail.com
 @file: __init__.py.py
 @time: 2018/10/11 13:46
 """

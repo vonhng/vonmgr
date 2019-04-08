@@ -1,7 +1,7 @@
 ## vonmgr 
 
 ### 1、目的
-集群管理的工具的集中，比如之前写的[集群传key工具](https://github.com/vonhng/transfer_pubkey.git)、[服务器电源管理](https://github.com/vonhng/ipmimgr)
+集群管理的工具的集集合，集群传key工具、服务器电源管理、集群命令注入等工具
 
 ### 2、说明
 ```shell
@@ -27,23 +27,18 @@ Subcommands:
 
 ```shell
 Switches:
-    -i, --ip IPS:str            执行命令的节点的ip,string格式，使用 "/"分隔
-    --no-log                    if given, no print detail
+    -a, --all                   处理配置文件中所有的节点
+    -i, --ip IPS:str            执行命令的节点的一个或多个ip, 使用 "/"分隔
+    --no-log                    if not given, print detail
     -p, --password PWD:str      password
     -u, --user USER:str         user
-```
-- count_code：查询某个目录下的代码行数，目前统计'yaml', 'py', 'yml', 'go', 'sh'
-
-```shell
-Switches:
-    --no-log                 if given, print detail
-    -p, --path PATH:str      directory path
 ```
 - power：服务器电源管理工具,详细用法在[power工具用法](https://github.com/vonhng/ipmimgr/blob/master/README.md)
 
 ```shell
 Switches:
     -g                                 if given, get power status
+    -a --all                           处理配置文件中所有的节点
     -i IP:str                          IPMI IP,example: 111(only 10.10.90.111)/10.10.xxx.xxx
     -p PWD:str                         IPMI PASSWORD,default: 123456; requires -u
     -s CMD:{'reset', 'on', 'off'}      set power on|off|reset; requires -i; excludes -g
@@ -52,6 +47,7 @@ Switches:
 - add：上传key，详细用法在[传key工具用法](https://github.com/vonhng/transfer_pubkey/blob/master/README.md)
 
 ```Switches:
+    -a --all                    处理配置文件中所有的节点
     -i, --ip IPS:str            remote ips,use '/' to split
     -p, --password PWD:str      password
     -u, --user USER:str         user
@@ -64,5 +60,4 @@ Switches:
 
 ### 4、TODO
 - 增加新工具
-- 增加.rc集中管理集群变量
 - go重写，解决依赖

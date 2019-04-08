@@ -3,14 +3,24 @@
 """
 @version: 2.7.10
 @author: vonhng
-@contact: qianyong.feng@woqutech.com
+@contact: vonhehe@gmail.com
 @file: util.py
 @time: 2018/10/11 12:30
 """
-
+import os
+import yaml
 import subprocess
 import paramiko
 from plumbum import colors
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def get_config():
+    yaml_path = os.path.join(ROOT, "setting/config.yaml")
+    with open(yaml_path, "rt") as f:
+        data = yaml.load(f.read())
+    return data
 
 
 class SSHError(Exception):
